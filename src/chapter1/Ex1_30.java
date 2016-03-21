@@ -38,7 +38,7 @@ public class Ex1_30 {
     public static void printArr(boolean[][] arr){
         for(int i = 0; i < arr.length; i++){
             for(int j = 0; j < arr[0].length; j++)
-                System.out.print(arr[i][j]==true?"T ":"F ");
+                System.out.print(arr[i][j]==true?"1 ":"0 ");
             System.out.println();
         }
     }

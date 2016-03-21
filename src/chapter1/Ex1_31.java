@@ -1,7 +1,5 @@
 package chapter1;
 
-import java.util.Random;
-
 import edu.princeton.cs.algs4.StdDraw;
 
 /*
@@ -13,10 +11,10 @@ import edu.princeton.cs.algs4.StdDraw;
 public class Ex1_31 {
 
 	public static void main(String[] args) {
-		int N = Integer.parseInt(args[0]);
-		double p = Double.parseDouble(args[1]);
-//		int N = 10;
-//		double p = 0.5;
+//		int N = Integer.parseInt(args[0]);
+//		double p = Double.parseDouble(args[1]);
+		int N = 10;
+		double p = 0.5;
 		int radius = 200;
 		StdDraw.setPenRadius(0.005);
 //		StdDraw.setPenRadius(0.002);
