@@ -40,7 +40,7 @@ public class SortCompare {
         String alg1 = "Insertion";
         String alg2 = "Selection";
         int N = 1000;
-        int T = 100;
+        int T = 500;
         double t1 = timeRandomInput(alg1, N, T);
         double t2 = timeRandomInput(alg2, N, T);
         StdOut.printf("For %d random Doubles\n    %s is", N, alg1);
