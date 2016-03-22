@@ -2,6 +2,8 @@ package chapter1;
 
 import edu.princeton.cs.algs4.StdRandom;
 
+import java.util.Arrays;
+
 /**
  * Created by TIMIT$ on 2016/3/21.
  * 随机匹配
@@ -24,16 +26,20 @@ public class Ex1_39 {
 
         for (int i = 0; i < T; i++) {
             for (int j = 0; j < 4; j++) {
-                System.out.print(result[i][j] + " ");
+                System.out.print(result[i][j] + "\t");
             }
             System.out.println();
         }
     }
-
-    private static int match(int[] a, int[] b) {
+    /*
+    匹配两个整型数组中都存在的元素
+    做法是遍历第一个数组中的每个元素，二分查找排序后的第二个数组，看是否有匹配
+     */
+    public static int match(int[] a, int[] b) {
         int count = 0;
+        Arrays.sort(b);
         for(int i = 0; i < a.length; i++) {
-            if (a[i] == BinarySearch(a[i], b))
+            if (-1 != BinarySearch(a[i], b))
                 count++;
         }
         System.out.println("now count is: " + count);
@@ -43,7 +49,7 @@ public class Ex1_39 {
     /*
     生成大小为N的随机6位正整数数组
      */
-    private static int[] createArr(int N) {
+    public static int[] createArr(int N) {
         int[] arr = new int[N];
         for (int i = 0; i < N; i++) {
             arr[i] = StdRandom.uniform(100000, 1000000);
@@ -51,7 +57,7 @@ public class Ex1_39 {
         return arr;
     }
 
-    private static int BinarySearch(int key, int[] a) {
+    public static int BinarySearch(int key, int[] a) {
         int lo = 0;
         int hi = a.length - 1;
         while (lo <= hi) {//被查找数组的键要么不存在，要么必然存在于a[lo..hi]之中
