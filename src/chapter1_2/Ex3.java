@@ -2,17 +2,19 @@ package chapter1_2;
 
 import edu.princeton.cs.algs4.Interval1D;
 import edu.princeton.cs.algs4.Interval2D;
-import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdRandom;
 
 /**
  * Created by Admin on 2016/3/23.
- * 编写一个Interval2D的用例，从命令行接受一个整数N。从标准输入中读取N个间隔（每个间隔
- * 由一对double值定义）并打印出所有相交的间隔对。
+ * 编写一个Interval2D的用例，从命令行接受参数N、min和max。生成N个随机的2D间隔，其宽
+ * 和高均匀地分布在单位正方形中的min和max之间。用StdDraw画出他们并打印出相交的间隔对
+ * 的数量以及有包含关系的间隔对数量。
  */
 public class Ex3 {
     public static void main(String[] args) {
 //        int N = Integer.parseInt(args[0]);
+//        int min = Integer.parseInt(args[1]);
+//        int max = Integer.parseInt(args[2]);
         int N = 5;
         int min = 0;
         int max = 1;
