@@ -1,6 +1,8 @@
 package chapter1_2;
 
+import edu.princeton.cs.algs4.Interval1D;
 import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdRandom;
 
 /**
  * Created by tttimit on 2016/3/22.
@@ -11,17 +13,29 @@ import edu.princeton.cs.algs4.StdIn;
 public class Ex2 {
     public static void main(String[] args)
     {
-        int N = Integer.parseInt(args[0]);
-        double[] ar = new double[N * 2];
+//        int N = Integer.parseInt(args[0]);
+        int N = 5;
+        Interval1D[] ar = new Interval1D[N];
 
-        for(int i = 0; i < N * 2; i++)
+        for(int i = 0; i < N; i++)
         {
-            ar[i] = StdIn.readDouble();
+//            double lo = StdIn.readDouble();
+//            double hi = StdIn.readDouble();
+            double lo = StdRandom.uniform();
+            double hi = 0.0;
+            while(hi <= lo)
+                hi = StdRandom.uniform();
+            ar[i] = new Interval1D(lo, hi);
         }
 
         for(int i = 0; i < N; i++)
         {
-
+            for(int j = i+1; j < N; j++)
+            {
+                if(ar[i].intersects(ar[j]))
+                    System.out.println("("+ar[i].left()+", " + ar[i].right()+
+                            ") 与("+ar[j].left() + ", " + ar[j].right()+")相交");
+            }
         }
 
     }
