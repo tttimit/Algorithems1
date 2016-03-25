@@ -15,6 +15,14 @@ public class Date {
         year = y;
     }
 
+    public Date(String s){
+        String[] ss = s.split("/");
+        day = Integer.parseInt(ss[1]);
+        month = Integer.parseInt(ss[2]);
+        year = Integer.parseInt(ss[2]);
+    }
+
+
     public int getMonth() {
         return month;
     }

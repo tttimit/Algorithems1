@@ -19,10 +19,8 @@ public class SmartDateTest {
         assertEquals(WEEKS[3], new SmartDate(1,2,2001).dayOfTheWeek());
         assertEquals(WEEKS[3], new SmartDate(1,11,2001).dayOfTheWeek());
         assertEquals(WEEKS[3], new SmartDate(24,3,2016).dayOfTheWeek());
-//        assertEquals(new SmartDate(1,1,2000).dayOfTheWeek(), WEEKS[6]);
-//        assertEquals(new SmartDate(1,1,2000).dayOfTheWeek(), WEEKS[6]);
-//        assertEquals(new SmartDate(1,1,2000).dayOfTheWeek(), WEEKS[6]);
-
-
+        assertEquals(WEEKS[4], new SmartDate(25,3,2016).dayOfTheWeek());
+        assertEquals(WEEKS[4], new SmartDate(29,2,2008).dayOfTheWeek());
+        assertEquals(WEEKS[0], new SmartDate(6,12,2027).dayOfTheWeek());
     }
 }

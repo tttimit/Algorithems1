@@ -18,6 +18,11 @@ public class Transaction {
         this.money = money;
     }
 
+//    public Transaction(String s){
+//        String[] ss = s.split(" ");
+//
+//    }
+
     public Date getDate() {
         return date;
     }

@@ -27,7 +27,7 @@ public class SmartDate {
 
     public static void main(String[] args)
     {
-        SmartDate sd = new SmartDate(2, 1, 2000);
+        SmartDate sd = new SmartDate(6, 12, 2004);
         System.out.println(sd.dayOfTheWeek());
     }
 
@@ -39,9 +39,8 @@ public class SmartDate {
     3、四百年再闰；
      */
     private boolean isLeapYear(int year) {
-        if (year % 400 == 0)
-            return true;
-        else return year % 4 == 0 && year % 100 != 0;
+        if (year % 400 == 0) return true;
+        return year % 4 == 0 && year % 100 != 0;
     }
 
 
@@ -72,8 +71,8 @@ public class SmartDate {
     public String dayOfTheWeek() {
         int index = 5;  //2000年1月1日的是星期六
         int days = 0;
-        for (int i = 2001; i <= year; i++) {
-            days += isLeapYear(year) ? 366 : 365;
+        for (int i = 2000; i < year; i++) {
+            days += isLeapYear(i) ? 366 : 365;
         }
         for (int i = 1; i < month; i++) {
             days += getMonthDays(i, year);
@@ -113,7 +112,7 @@ public class SmartDate {
                 days = 30;
                 break;
             default:
-                throw new RuntimeException("您输入的月份不合法！");
+                throw new RuntimeException("The month you input is invalid.");
         }
         return days;
     }
