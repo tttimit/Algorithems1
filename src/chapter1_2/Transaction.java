@@ -18,10 +18,12 @@ public class Transaction {
         this.money = money;
     }
 
-//    public Transaction(String s){
-//        String[] ss = s.split(" ");
-//
-//    }
+    public Transaction(String s){
+        String[] ss = s.split(" ");
+        date = new Date(ss[1]);
+        customer = ss[0];
+        money = Double.parseDouble(ss[2]);
+    }
 
     public Date getDate() {
         return date;
