@@ -1,5 +1,8 @@
 package chapter1_3;
 
+import edu.princeton.cs.algs4.StdIn;
+
+import java.io.InputStream;
 import java.util.Iterator;
 
 /**
@@ -33,21 +36,37 @@ public class Stack<Item> implements Iterable<Item> {
         }
     }
 
+    /**
+     * 返回栈中最近添加的元素，即最顶上的子元素，但是不删除该元素
+     * @return 最近添加的元素
+     */
+    public Item peek(){
+        return first.item;
+    }
+
     public static void main(String[] args) {
-        Stack<Integer> s = new Stack<Integer>();
-        for (int i = 0; i < 10; i++) {
-            int ee = (int) (Math.random() * 100);
-            s.push(ee);
-            System.out.print(ee + " ");
-        }
-        System.out.println();
-        System.out.println("size is: " + s.size());
+//        Stack<Integer> s = new Stack<Integer>();
+//        for (int i = 0; i < 10; i++) {
+//            int ee = (int) (Math.random() * 100);
+//            s.push(ee);
+//            System.out.print(ee + " ");
+//        }
+//        System.out.println();
+//        System.out.println("size is: " + s.size());
 //        while(!s.isEmpty()){
 //            System.out.print(s.pop() + " ");
 //        }
-        for (Integer e : s) {
-            System.out.print(e + " ");
-        }
+//        for (Integer e : s) {
+//            System.out.print(e + " ");
+//        }
+//        Stack<String> s = new Stack<String>();
+//        while(!StdIn.isEmpty()){
+//            String[] allString = StdIn.readAllStrings();
+//            for(int i = 0; i < allString.length; i++)
+//            {
+//                s.push(allString[i]);;
+//            }
+//        }
 
     }
 

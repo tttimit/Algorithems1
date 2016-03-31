@@ -30,6 +30,7 @@ public class FixedCapacityStackOfStrings {
     {
         return a[--N];  //N是数组长度，但是数组的脚标是0到N-1
     }
+    public boolean isFull(){return --N == a.length;}
 
     public static void main(String[] args)
     {
