@@ -7,19 +7,25 @@ package chapter1_3;
  * 1 + 2) * 3 - 4) * 5 - 6)))
  * 应该得到输出：
  * ((1 + 2) * ((3 - 4) * (5 - 6)))
+ *
+ * 自己的思考：
+ * 括号都是成对出现的，现在是缺失了右括号，那么我逆序读入字符串，每当遇到一个右括号，
+ * 就入栈。在逆序读取字符的郭晨规划总
  */
+//TODO:这个题目没完成
 public class Ex9 {
     public static void main(String[] args)
     {
 
     }
 
-    public static String fff(String src)
+    public static String refillP(String src)
     {
         Stack<String> st = new Stack<String>();
         for(int i = 0; i < src.length(); i++)
         {
             char cur = src.charAt(i);
+
         }
 
         return "";
