@@ -1,5 +1,7 @@
 package chapter1_3;
 
+import static chapter1_3.Ex9.isOperand;
+
 /**
  * Created by Admin on 2016/4/1.
  * 编写一段程序InfixToPostfix，将算术表达式由中序表达式转为
@@ -24,6 +26,18 @@ public class InfixToPostfix {
     public static String infix2Postfix(String in)
     {
         String out = "";
+        Stack<Character> operands = new Stack<Character>();
+        Stack<Character> operators = new Stack<Character>();
+
+        for(int i = 0; i < in.length(); i++)
+        {
+            char current = in.charAt(i);
+            if(isOperand(current))
+                operands.push(current);
+            else{
+
+            }
+        }
 
 
         return out;
