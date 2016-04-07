@@ -14,40 +14,73 @@ public class IterableStack<Item> implements Iterable<Item> {
         return new IterableStackIterator();
     }
 
-    private class Node{
+    private class Node {
         Item item;
         Node next;
     }
 
     private Node first;
+    private int N;
 
-    public void push(Item item){
-        if(first == null){
+    public void push(Item item) {
+        if (first == null) {
             first.item = item;
-        }else{
+            N = 1;
+        } else {
             Node oldF = first;
-            Node node = new Node();
-            node.item = item;
-            node.next = null;
-            first = node;
+            first.item = item;
+            first.next = null;
             oldF.next = first;
+            N++;
         }
     }
 
+    public Item pop() {
+        if (first != null) {
+            Item item = first.item;
+            first = first.next;
+            N--;
+            return item;
+        } else {
+            return null;
+        }
+    }
+
+    public int size() {
+        return N;
+    }
+
+    public boolean isEmpty() {
+        return N == 0; //return first == null;
+    }
+
+    public Item peek() {
+      return first.item;
+    }
+
+    public static IterableStack<String> copy(IterableStack<String> stack){
+        IterableStack<String> out = new IterableStack<String>();
+        while(!stack.isEmpty()){
+            out.push(stack.pop());
+        }
+        return out;
+    }
+
     private class IterableStackIterator implements Iterator<Item> {
+        private Node temp = first;
         @Override
         public boolean hasNext() {
-            return false;
+            return temp != null;
         }
 
         @Override
         public Item next() {
-            return null;
+            Item item = temp.item;
+            temp = temp.next;
+            return item;
         }
 
         @Override
-        public void remove() {
-
-        }
+        public void remove() {}
     }
 }

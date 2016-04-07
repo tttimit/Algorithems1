@@ -5,8 +5,8 @@ import java.util.Iterator;
 /**
  * Created by Admin on 2016/3/30.
  */
-public class Queue<Item> implements Iterable<Item>{
-    private class Node{
+public class Queue<Item> implements Iterable<Item> {
+    private class Node {
         private Item item;
         private Node next;
     }
@@ -16,8 +16,9 @@ public class Queue<Item> implements Iterable<Item>{
         return new QueueIterator();
     }
 
-    private class QueueIterator implements Iterator<Item>{
+    private class QueueIterator implements Iterator<Item> {
         Node temp = first;
+
         @Override
         public boolean hasNext() {
             return temp == last.next; //return temp == null;
@@ -32,7 +33,6 @@ public class Queue<Item> implements Iterable<Item>{
 
         @Override
         public void remove() {
-
         }
     }
 
@@ -40,32 +40,30 @@ public class Queue<Item> implements Iterable<Item>{
     private Node last;
     private int N;
 
-    public void enQueue(Item item)
-    {
+    public void enQueue(Item item) {
         Node oldL = last;
         last = new Node();
         last.item = item;
         last.next = null;
-        if(isEmpty()) first = last;
+        if (isEmpty()) first = last;
         else oldL.next = last;
         N++;
     }
 
-    public Item deQueue()
-    {
+    public Item deQueue() {
         Item item = first.item;
         first = first.next;
-        if(isEmpty()) last = null;
+        if (isEmpty()) last = null;
         N--;
         return item;
     }
 
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         return N == 0; //return first == null;
     }
 
-    public int size()
-    {return N;}
+    public int size() {
+        return N;
+    }
 
 }
