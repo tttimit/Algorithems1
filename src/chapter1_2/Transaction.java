@@ -1,5 +1,8 @@
 package chapter1_2;
 
+import chapter1_3.Queue;
+import edu.princeton.cs.algs4.In;
+
 /**
  * Created by tttimit on 2016/3/24.
  * 用我们对Date的实现作为模版实现Transaction类型。
@@ -23,6 +26,22 @@ public class Transaction {
         date = new Date(ss[1]);
         customer = ss[0];
         money = Double.parseDouble(ss[2]);
+    }
+    /*
+    读入格式为：客户、日期和金额，由空格分隔  Turing 5/22/1939 11.99
+     */
+    public static Transaction[] readTransaction(String input){
+        In in = new In(input);
+        Queue<String> q = new Queue<String>();
+        while(!in.isEmpty()){
+            q.enQueue(in.readString()+ " " + in.readString());
+        }
+        int N = q.size();
+        Transaction[] transactions = new Transaction[N];
+        for(int i = 0; i < N; i++) {
+            transactions[i] = new Transaction(q.deQueue());
+        }
+        return transactions;
     }
 
     public Date getDate() {
