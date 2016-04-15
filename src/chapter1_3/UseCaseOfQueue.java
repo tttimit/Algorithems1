@@ -15,7 +15,7 @@ public class UseCaseOfQueue {
         while (!StdIn.isEmpty()) {
             queue.enQueue(StdIn.readString());
         }
-        while(queue.size() > k){
+        while (queue.size() > k) {
             queue.deQueue();
         }
         StdOut.println(queue.deQueue());
