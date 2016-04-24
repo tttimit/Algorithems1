@@ -1,7 +1,5 @@
 package chapter1_3;
 
-import chapter1_3.Ex21.Node;
-
 /**
  * Created by tttimit on 2016/4/14.
  * <p>
